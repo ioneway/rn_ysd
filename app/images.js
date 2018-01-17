@@ -6,5 +6,6 @@ export default {
   tab_2: require('./images/tab_2.png'),
   tab_2_selected: require('./images/tab_2_selected.png'),
   tab_3: require('./images/tab_3.png'),
-  tab_3_selected: require('./images/tab_3_selected.png')
+  tab_3_selected: require('./images/tab_3_selected.png'),
+  latest_activity: require('./images/latest_activities.png')
 }
