@@ -16,7 +16,7 @@ let {width, height} = Dimensions.get('window')
 export default class ProductPage extends Component {
   static navigationOptions = ({navigation,screenProps}) => ({
         // 这里面的属性和App.js的navigationOptions是一样的。
-        headerTitle:navigation.state.params?navigation.state.params.headerTitle:'产品555列表',
+        headerTitle:navigation.state.params?navigation.state.params.headerTitle:'产品列表',
         headerTitleStyle:{
                 color:'#555555'
         },
