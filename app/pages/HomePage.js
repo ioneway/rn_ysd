@@ -36,7 +36,6 @@ export default class HomePage extends Component {
   constructor(props){
     super(props)
     this.state = {
-
     }
   }
 
@@ -58,12 +57,12 @@ export default class HomePage extends Component {
              </View>
            </View>
            <View style={[styles.container1, {height:px2dp(60)}]}>
-          <TouchableWithoutFeedback style={styles.leftSection}>
-
+          <TouchableWithoutFeedback style={styles.leftSection} onPress={()=>{
+              const { navigate } = this.props.navigation;
+              navigate('ProductPage', {'title':'产品'});
+        }}>
              <Image source={LocalImg.latest_activity} style={styles.latest_activity}>
-
             </Image>
-
           </TouchableWithoutFeedback>
           <TouchableWithoutFeedback >
             <View style={styles.rightSection}>
