@@ -10,9 +10,11 @@ import {
   Dimensions,
   StyleSheet,
   Animated,
-  Image
+  Image,
+  TouchableWithoutFeedback
 } from 'react-native'
 import Swiper from 'react-native-swiper'
+// import YSWebView from './YSWebView'
 import px2dp from '../util/Tools'
 const { dwidth, dheight } = Dimensions.get("window")
 
@@ -42,7 +44,15 @@ export default class CarouselFigures extends Component {
           {
             this.state.movies.map((item, i) => {
               return (
-                  <Image style={[styles.slide,]} source={{uri: IMAGE_PRE_URL+item}}></Image>
+
+
+                <TouchableWithoutFeedback style={[styles.slide,]} onPress={()=>{
+                    const { navigate } = this.props.navigation;
+                    navigate('YSWebView', {'url':'http://baidu.com', 'headerTitle': '百度一下'});}}>
+                    <Image style={[styles.slide,]} source={{uri: IMAGE_PRE_URL+item}}>
+                    </Image>
+                </TouchableWithoutFeedback>
+
               )
             })
           }

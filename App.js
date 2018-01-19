@@ -26,6 +26,7 @@ import MyselfPage from './app/pages/MySelfPage'
 let {width, height} = Dimensions.get('window')
 import px2dp from './app/util/Tools'
 import NavStyle from './app/pages/NavStyle'
+import YSWebView from './app/component/YSWebView'
 // import TabVC from './TabVC'
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -206,7 +207,13 @@ const MyApp = StackNavigator({
   },
   ProductPage:{
     screen:ProductPage,
-    navigationOptions:({navigation, screenProps}) => ({
+    navigationOptions:() => ({
+      headerTintColor:'#999999'
+    })
+  },
+  YSWebView:{
+    screen: YSWebView,
+    navigationOptions:() => ({
       headerTintColor:'#999999'
     })
   }

@@ -43,7 +43,7 @@ export default class HomePage extends Component {
     return (
         // <View style={styles.typesView}></View>
       <View style={{backgroundColor:"#eeeeee"}}>
-            <CarouselFigures />
+            <CarouselFigures {...this.props}/>
             <View style={[styles.container1, {height:px2dp(45)}]}>
                   <View style={styles.viewStyle1}>
                     <Text style={{ fontSize:13,}}> 理财会员
@@ -59,7 +59,7 @@ export default class HomePage extends Component {
            <View style={[styles.container1, {height:px2dp(60)}]}>
           <TouchableWithoutFeedback style={styles.leftSection} onPress={()=>{
               const { navigate } = this.props.navigation;
-              navigate('ProductPage', {'title':'产品'});
+              navigate('ProductPage', {'headerTitle':'产品'});
         }}>
              <Image source={LocalImg.latest_activity} style={styles.latest_activity}>
             </Image>
