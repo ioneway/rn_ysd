@@ -26,14 +26,9 @@ import MyselfPage from './app/pages/MySelfPage'
 let {width, height} = Dimensions.get('window')
 import px2dp from './app/util/Tools'
 import NavStyle from './app/pages/NavStyle'
+import FeedBackPage from './app/pages/FeedBackPage'
 import YSWebView from './app/component/YSWebView'
-// import TabVC from './TabVC'
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+import Icon from 'react-native-vector-icons/iconfont'
 
 
 
@@ -92,16 +87,17 @@ const styles = StyleSheet.create({
 })
 
 const TabVC = TabNavigator({
-    乐商贷: {
+    "乐商贷": {
       screen: HomePage,
       navigationOptions:({navigation, screenProps}) => ({
         header: null,
         tabBarIcon: (({tintColor,focused}) => {
               return(
-                  <Image
-                      source={!focused ? LocalImg['tab_0'] : LocalImg['tab_0_selected']}
-                      style={styles.tabStyle}
-                  />
+                  // <Image
+                  //     source={!focused ? LocalImg['tab_0'] : LocalImg['tab_0_selected']}
+                  //     style={styles.tabStyle}
+                  // />
+                  <Icon name={"ic_money"} size={px2dp(23)} color={focused ? '#ff0000' : '#555555'} />
               )
           }),
       })
@@ -112,10 +108,11 @@ const TabVC = TabNavigator({
         header: null,
         tabBarIcon: (({tintColor,focused}) => {
               return(
-                  <Image
-                      source={!focused ? LocalImg['tab_1'] : LocalImg['tab_1_selected']}
-                      style={styles.tabStyle}
-                  />
+                  // <Image
+                  //     source={!focused ? LocalImg['tab_1'] : LocalImg['tab_1_selected']}
+                  //     style={styles.tabStyle}
+                  // />
+                  <Icon name={"ic_list"} size={px2dp(23)} color={focused ? '#ff0000' : '#555555'} />
               )
           }),
       })
@@ -126,10 +123,11 @@ const TabVC = TabNavigator({
         header: null,
         tabBarIcon: (({tintColor,focused}) => {
               return(
-                  <Image
-                      source={!focused ? LocalImg['tab_2'] : LocalImg['tab_2_selected']}
-                      style={styles.tabStyle}
-                  />
+                  // <Image
+                  //     source={!focused ? LocalImg['tab_2'] : LocalImg['tab_2_selected']}
+                  //     style={styles.tabStyle}
+                  // />
+                  <Icon name={"ic_my"} size={px2dp(23)} color={focused ? '#ff0000' : '#555555'} />
               )
           }),
       })
@@ -137,13 +135,14 @@ const TabVC = TabNavigator({
     更多: {
       screen: MorePage,
       navigationOptions:({navigation, screenProps}) => ({
-        header: null,
+
         tabBarIcon: (({tintColor,focused}) => {
               return(
-                  <Image
-                      source={!focused ? LocalImg['tab_3'] : LocalImg['tab_3_selected']}
-                      style={styles.tabStyle}
-                  />
+                  // <Image
+                  //     source={!focused ? LocalImg['tab_3'] : LocalImg['tab_3_selected']}
+                  //     style={styles.tabStyle}
+                  // />
+                  <Icon name={"ic_more"} size={px2dp(23)}  color={focused ? '#ff0000' : '#555555'} />
               )
           }),
       })
@@ -177,8 +176,6 @@ const TabVC = TabNavigator({
             //整个标签页的样式
             style:{
                 backgroundColor:'#fff',
-
-
             },
             //标签页图片显示区域样式
             iconStyle:{
@@ -196,8 +193,6 @@ const TabVC = TabNavigator({
                 height:3,
 
             }
-
-
         }
     })
 
@@ -216,5 +211,12 @@ const MyApp = StackNavigator({
     navigationOptions:() => ({
       headerTintColor:'#999999'
     })
+  },
+  FeedBackPage:{
+    screen: FeedBackPage,
+    navigationOptions:() => ({
+      headerTintColor:'#999999'
+    })
   }
+
 })

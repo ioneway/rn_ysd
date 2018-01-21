@@ -44,12 +44,10 @@ export default class CarouselFigures extends Component {
           {
             this.state.movies.map((item, i) => {
               return (
-
-
-                <TouchableWithoutFeedback style={[styles.slide,]} onPress={()=>{
+                <TouchableWithoutFeedback style={[styles.slide]} onPress={()=>{
                     const { navigate } = this.props.navigation;
                     navigate('YSWebView', {'url':'http://baidu.com', 'headerTitle': '百度一下'});}}>
-                    <Image style={[styles.slide,]} source={{uri: IMAGE_PRE_URL+item}}>
+                    <Image style={[styles.slide]} source={{uri: IMAGE_PRE_URL+item}}>
                     </Image>
                 </TouchableWithoutFeedback>
 
