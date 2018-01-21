@@ -37,7 +37,7 @@ export default class FeedBackPage extends Component {
           <TextInput placeholder={"欢迎您向我们发送反馈意见。"} multiline maxLength={512} style={[styles.textInputStyle, styles.marginLR, {height:px2dp(200)}]}/>
           <TextInput placeholder={"留下您的手机号或者邮箱以便给您回复。"} style={[styles.textInputStyle, styles.marginLR, {height:px2dp(37)}]}/>
             <View style={styles.container}>
-           <Button style={[styles.button,  {marginTop:px2dp(30)}]} onPress:this._btnClick.bind(this, {})>
+           <Button style={[styles.button,  {marginTop:px2dp(30)}]} onPress={this._btnClick.bind(this, {})}>
             <Text style={{color:"white", fontWeight:'bold'}}>提交</Text>
           </Button>
           </View>
