@@ -41,7 +41,7 @@ export default class MorePage extends Component {
       }
   _goPage(key, data = {}){
     const { navigate } = this.props.navigation;
-    navigate('FeedBackPage', data);
+    navigate(key, data);
   }
   _renderListItem(){
     return this.config.map((item, i) => {
