@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
       ...ifIphoneX({
             height: height-83-88
         }, {
-            height: height-64-49
+            height: height-49-64
         })
 
 
