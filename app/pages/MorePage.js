@@ -77,11 +77,5 @@ const styles = StyleSheet.create({
         }, {
             height: height-49-64
         })
-
-
-    },
-    versionText: {
-      justifyContent:"flex-end",
-      alignItems:"center"
     }
 })
