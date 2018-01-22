@@ -11,12 +11,13 @@ import {
   StyleSheet,
   Animated,
   Image,
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback,
+  SafeAreaView
 } from 'react-native'
 import Swiper from 'react-native-swiper'
 // import YSWebView from './YSWebView'
 import px2dp from '../util/Tools'
-const { dwidth, dheight } = Dimensions.get("window")
+const { width, height } = Dimensions.get("window")
 
 const REQUEST_URL = 'https://www.yueshanggroup.cn/api/rest/indexH';
 const IMAGE_PRE_URL = 'https://www.yueshanggroup.cn/mobile'
@@ -27,6 +28,7 @@ export default class CarouselFigures extends Component {
     this.state = {
             movies: null,
         };
+    this.height = (height > 800 ? px2dp(260):px2dp(210))
   }
 
   render(){
@@ -34,8 +36,8 @@ export default class CarouselFigures extends Component {
             return this.renderLoadingView();
         }
     return (
-      <View style={styles.container}>
-        <Swiper style={styles.wrapper} showsButtons={false} autoplay={true} height={px2dp(220)}
+      <View style={{height:this.height}}>
+        <Swiper style={styles.wrapper} showsButtons={false} autoplay={true} height={this.height}
           dot={<View style={{backgroundColor: 'rgba(255,255,255,.3)', width: 7, height: 7, borderRadius: 3, marginLeft: 3, marginRight: 3}} />}
           activeDot={<View style={{backgroundColor: '#fff', width: 7, height: 7, borderRadius: 3, marginLeft: 3, marginRight: 3}} />}
           paginationStyle={{
@@ -60,10 +62,7 @@ export default class CarouselFigures extends Component {
   }
   renderLoadingView() {
           return (
-              <View style={styles.container}>
-                  <Text>
-                      Loading movies...
-                  </Text>
+              <View style={{height:this.height, backgroundColor:"white"}}>
               </View>
           );
       }
@@ -91,7 +90,7 @@ export default class CarouselFigures extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    height:px2dp(220)
+    height:px2dp(500)
 
 },
 
@@ -130,6 +129,4 @@ text: {
   fontSize: 30,
   fontWeight: 'bold'
 }
-
-
 })

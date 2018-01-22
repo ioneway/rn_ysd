@@ -13,7 +13,8 @@ import {
   Dimensions,
   Animated,
   Image,
-  View
+  View,
+  SafeAreaView
 } from 'react-native';
 
 // import Icon from 'react-native-vector-icons'
@@ -29,8 +30,6 @@ import NavStyle from './app/pages/NavStyle'
 import FeedBackPage from './app/pages/FeedBackPage'
 import YSWebView from './app/component/YSWebView'
 import Icon from 'react-native-vector-icons/iconfont'
-
-
 
 
 export default class App extends Component{

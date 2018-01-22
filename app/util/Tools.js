@@ -8,5 +8,6 @@ const deviceW = Dimensions.get('window').width
 const basePx = 375
 
 export default function px2dp(px) {
+  let a = px * deviceH / basePx
   return px * deviceW / basePx
 }

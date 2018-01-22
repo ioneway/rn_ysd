@@ -9,9 +9,11 @@ import {
   View
 } from 'react-native'
 import NavStyle from './NavStyle';
+import DeviceInfo from 'react-native-device-info'
 import TabNavigator from 'react-native-tab-navigator'
 import Icon from 'react-native-vector-icons/Ionicons'
 import Item from '../component/item'
+import { ifIphoneX } from 'react-native-iphone-x-helper'
 let {width, height} = Dimensions.get('window')
 
 export default class MorePage extends Component {
@@ -19,6 +21,7 @@ export default class MorePage extends Component {
   static navigationOptions = ({navigation,screenProps}) => ({
         // 这里面的属性和App.js的navigationOptions是一样的。
         headerTitle:navigation.state.params?navigation.state.params.headerTitle:'更多',
+
         gestureResponseDistance:{horizontal:300},
     });
   constructor(props) {
@@ -54,7 +57,12 @@ export default class MorePage extends Component {
   render(){
     return(
       <View style={styles.main}>
-        {this._renderListItem()}
+        <View>
+            {this._renderListItem()}
+        </View>
+        <View style={[styles.versionText, {flex: 1}]}>
+          <Text style={{color:"#aaaaaa", paddingBottom:10}}>当前版本：v{DeviceInfo.getVersion()}</Text>
+        </View>
       </View>
     )
   }
@@ -63,7 +71,17 @@ export default class MorePage extends Component {
 const styles = StyleSheet.create({
     main: {
       backgroundColor: '#eeeeee',
-      height:height,
-      width:width
+      width:width,
+      ...ifIphoneX({
+            height: height-83-88
+        }, {
+            height: height-64-49
+        })
+
+
+    },
+    versionText: {
+      justifyContent:"flex-end",
+      alignItems:"center"
     }
 })

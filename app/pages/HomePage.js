@@ -20,12 +20,12 @@ import {
   TouchableWithoutFeedback,
   Dimensions,
   ActivityIndicator,
-  Animated
+  Animated,
+  SafeAreaView
 } from 'react-native';
 import LocalImg from '../images'
 import px2dp from '../util/Tools'
 import CarouselFigures from '../component/CarouselFigures'
-
 const isIOS = Platform.OS == "ios"
 const { width, height } = Dimensions.get("window")
 const headH = px2dp(isIOS?140:120)
@@ -36,11 +36,13 @@ export default class HomePage extends Component {
     super(props)
     this.state = {
     }
+    
   }
 
   render(){
     return (
         // <View style={styles.typesView}></View>
+      // <SafeAreaView>
       <View style={{backgroundColor:"#eeeeee"}}>
             <CarouselFigures {...this.props}/>
             <View style={[styles.container1, {height:px2dp(45)}]}>
@@ -66,11 +68,11 @@ export default class HomePage extends Component {
           <TouchableWithoutFeedback >
             <View style={styles.rightSection}>
               <View style={styles.left_section_1}>
-                <Text style={{marginBottom:px2dp(4),marginLeft:px2dp(5), fontSize:15, fontWeight:'bold'}}>
+                <Text style={{marginBottom:px2dp(4),marginLeft:px2dp(5), fontSize:14, fontWeight:'bold'}}>
                    乐商贷7月份运营报告
                 </Text>
-                <Text style={{marginTop:px2dp(5), marginLeft:px2dp(5), fontSize:12, fontWeight:'bold', color:"#aaa"}}>
-                   活动时间：2017-08-01 - 2017-12-31
+                <Text style={{marginTop:px2dp(5), marginLeft:px2dp(5), fontSize:11, fontWeight:'bold', color:"#aaa"}}>
+                   活动时间:2017-08-01-2017-12-31
                 </Text>
               </View>
               <View style={styles.left_section_2}>
@@ -82,6 +84,7 @@ export default class HomePage extends Component {
           </TouchableWithoutFeedback>
         </View>
     </View>
+    // </SafeAreaView>
 
     )
   }
