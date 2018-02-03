@@ -10,7 +10,6 @@ import {
 } from 'react-native'
 import NavStyle from './NavStyle';
 import DeviceInfo from 'react-native-device-info'
-import TabNavigator from 'react-native-tab-navigator'
 import Icon from 'react-native-vector-icons/Ionicons'
 import Item from '../component/item'
 import { ifIphoneX } from 'react-native-iphone-x-helper'

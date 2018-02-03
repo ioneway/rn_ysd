@@ -36,7 +36,7 @@ export default class HomePage extends Component {
     super(props)
     this.state = {
     }
-    
+
   }
 
   render(){
@@ -83,6 +83,7 @@ export default class HomePage extends Component {
             </View>
           </TouchableWithoutFeedback>
         </View>
+
     </View>
     // </SafeAreaView>
 

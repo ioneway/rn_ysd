@@ -15,6 +15,7 @@ import {
   SafeAreaView
 } from 'react-native'
 import Swiper from 'react-native-swiper'
+import API from '../api/api'
 // import YSWebView from './YSWebView'
 import px2dp from '../util/Tools'
 const { width, height } = Dimensions.get("window")
@@ -68,18 +69,16 @@ export default class CarouselFigures extends Component {
       }
 
   fetchData() {
-        //这个是js的访问网络的方法
-        fetch(REQUEST_URL)
-            //ES6的写法左边代表输入的参数右边是逻辑处理和返回结果
-            .then((response) => response.json())
-            .then((responseData) => {
-                this.setState({
-                    movies: responseData.indexImageItemList.map((item , i) => {
-                      return item.imageUrl
-                    }),
-                });
-            })
-            .done();
+            try{
+              let result = await API.getImgUrls();
+              this.setState({
+                movies: result.indexImageItemList.map((item, i) => {
+                  return item.imageUrl
+                })
+              })
+            }catch(err){
+              console.error(err);
+            }
     }
 
     componentDidMount() {
@@ -89,10 +88,6 @@ export default class CarouselFigures extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    height:px2dp(500)
-
-},
 
 wrapper: {
 },
