@@ -29,7 +29,6 @@ class API extends Server {
    * 用途：获取广播内容数组
    */
   async getBroadCasts(params = {}){
-    try {
       try {
         let result = await this.axios('get', '/rest/indexH');
         if(result && result.status === 1){
@@ -43,9 +42,30 @@ class API extends Server {
           }
           throw err;
         }
-      }catch(err){
+      } catch(err) {
         throw err;
       }
+  }
+
+  /**
+   * 用途：获取首页产品的信息
+   */
+  async getHomeProductInfo(params = {}){
+    try {
+      let result = await this.axios('get', '/rest/indexH');
+      if(result && result.status === 1){
+        return result;
+      } else {
+        let err = {
+          tip: '自定义异常：getHomeProductInfo失败',
+          response: result,
+          data: params,
+          url: ''
+        }
+        throw err;
+      }
+    } catch(err) {
+      throw err;
     }
   }
 }
