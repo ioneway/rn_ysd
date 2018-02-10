@@ -1,5 +1,5 @@
 import axios from 'axios'
-import envconfig from '../envconfig'
+import envconfig from '../../envconfig'
 
 export default class Server {
   axios(method, url, params){

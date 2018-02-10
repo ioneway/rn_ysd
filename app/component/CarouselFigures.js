@@ -68,7 +68,7 @@ export default class CarouselFigures extends Component {
           );
       }
 
-  fetchData() {
+async  fetchData() {
             try{
               let result = await API.getImgUrls();
               this.setState({

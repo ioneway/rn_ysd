@@ -61,7 +61,7 @@ export default class CycleBroadCast extends Component {
           );
       }
 
-  fetchData() {
+async  fetchData() {
             try{
               let result = await API.getBroadCasts();
               this.setState({

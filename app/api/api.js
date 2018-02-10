@@ -8,7 +8,7 @@ class API extends Server {
   async getImgUrls(params = {}){
     try {
       let result = await this.axios('get', '/rest/indexH');
-      if(result && result.status === 1){
+      if(result){
         return result;
       } else {
         let err = {
@@ -69,3 +69,4 @@ class API extends Server {
     }
   }
 }
+export default new API()

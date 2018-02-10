@@ -33,6 +33,7 @@
 	<string></string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>FontAwesome.ttf</string>
 		<string>iconfont.ttf</string>
 		<string>Ionicons.ttf</string>
 	</array>

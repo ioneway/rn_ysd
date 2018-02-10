@@ -16,12 +16,12 @@ import {
   AlertIOS,
   TouchableNativeFeedback
 } from 'react-native'
-import px2dp from '../util/Tools'
+
 import Button from './Button'
 import iconfont from 'react-native-vector-icons/iconfont'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
-
+import px2dp from '../util/Tools'
 let {width, height} = Dimensions.get('window')
 const itemHeight = px2dp(45)
 
